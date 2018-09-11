@@ -1,18 +1,27 @@
 {
-    "name": "restserver",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-        "start": "node server/server.js",
-        "nodemon": "nodemon server/server.js",
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "author": "",
-    "license": "ISC",
-    "dependencies": {
-        "body-parser": "^1.18.3",
-        "express": "^4.16.3",
-        "mongoose": "^5.2.14"
-    }
+  "name": "restserver",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "nodemon": "nodemon server/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "mongoose": "^5.2.14"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/digitalcazar/node-restserver.git"
+  },
+  "bugs": {
+    "url": "https://github.com/digitalcazar/node-restserver/issues"
+  },
+  "homepage": "https://github.com/digitalcazar/node-restserver#readme",
+  "description": ""
 }
