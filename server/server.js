@@ -2,7 +2,9 @@
 require('./config/config');
 
 //Primero vamos a cambiar el var por un const y agregar un ";" al final de cada linea
+//Es un estandar o norma que todos los requiere vayan hasta arriba en los documentos js
 const express = require('express');
+const mongoose = require('mongoose');
 const app = express();
 //Agregamos el body-parser
 const bodyParser = require('body-parser');
@@ -43,4 +45,16 @@ app.delete('/usuario', function(req, res) {
 //Agregamos una funcion de flecha
 app.listen(process.env.PORT, () => {
     console.log('Escuchando puerto:', process.env.PORT);
+});
+//Es la forma en la que mongoose se va a conectar a mongoDB, mongodb es el protocolo 
+//Por el momento estamos trabajando en el localhost, hay que agregar el puerto en donde esta escuchando mongod (27017)
+//Colocamos el nombre de la base de datos en este caso la llamaremos cafe si no existe en mongoDB la crea, despues
+//Agregamos una funcion de flecha para programar un callback para saber si se logra o no conectar
+mongoose.connect('mongodb://localhost:27017/cafe', (err, res) => {
+    if (err) throw err; //Si existe un error simplemente se sale del programa
+    console.log('Base de datos ONLINE');
+});
+//Agregamos la funcion de flecha
+app.listen(process.env.PORT, () => {
+    console.log('Escuchando puerto', process.env.PORT);
 });
